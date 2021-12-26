@@ -1,4 +1,4 @@
-package "your package"
+package your package;
 
 class MainActivity : AppCompatActivity(){
  
