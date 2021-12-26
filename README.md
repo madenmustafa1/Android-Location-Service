@@ -1,2 +1,2 @@
 # Android-Location-Service
-Android Location service
+Android background location service
