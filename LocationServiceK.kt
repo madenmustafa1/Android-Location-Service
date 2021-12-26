@@ -29,16 +29,10 @@ class LocationServiceK : Service() {
                     val latitude = locationResult.lastLocation.latitude
                     val longitude = locationResult.lastLocation.longitude
                     //println("Location KService: $latitude $longitude")
-
-
-
                 }
             } catch (e: Exception) {
-                println("Service Error 81: " + e.message)
-
-                //Firebase.crashlytics.recordException(e)
+                println("Service Error 81: " + e
             }
-
         }
     }
 
@@ -88,20 +82,7 @@ class LocationServiceK : Service() {
         locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
         //PRIORITY_HIGH_ACCURACY
 
-
-        /*
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-
-         */LocationServices.getFusedLocationProviderClient(this)
+         LocationServices.getFusedLocationProviderClient(this)
             .requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper())
         startForeground(LocationServiceConstants.LOCATION_SERVICE_ID, builder.build())
     }
